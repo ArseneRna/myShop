@@ -1,0 +1,83 @@
+import { Search } from "lucide-react";
+import { GoHeartFill } from "react-icons/go";
+import { HiShoppingBag } from "react-icons/hi";
+import { Button } from "../ui/button";
+import { GiHamburgerMenu } from "react-icons/gi";
+
+const Navbar = () => {
+  return (
+    <header className="bg-white">
+      <nav className="flex mx-auto h-[12vh] items-center px-3 lg:px-10 justify-between max-w-[1400px]">
+        {/* logo */}
+        <a href="/" className="text-3xl font-bold">
+          Mys<span className="text-primary uppercase">h</span>op
+        </a>
+        {/* Menu principale */}
+        <ul className="hidden lg:flex items-center gap-x-15 ">
+          <li>
+            <a
+              href="#"
+              className="font-semibold tracking-wider text-primary  hover:text-primary"
+            >
+              Accueil
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="font-semibold tracking-wider text-foreground hover:text-primary"
+            >
+              Boutique
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="font-semibold tracking-wider text-foreground hover:text-primary"
+            >
+              A propos
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="font-semibold tracking-wider text-foreground hover:text-primary"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+        {/* menu de reaction  */}
+        <div className="flex gap-6 items-center">
+          <div className="hidden lg:flex items-center gap-2 relative">
+            <input
+              className=" border-primary/80 pl-2 py-1 border-2 pr-8 focus:border-primary focus:outline-none rounded-full"
+              type="text"
+              name="text"
+              placeholder="Recherche ..."
+              id="search"
+            />
+            <button className="absolute right-1 text-background text-xl cursor-pointer bg-primary w-7 h-7 flex items-center justify-center rounded-full">
+              <Search size={16} />
+            </button>
+          </div>
+          <a href="#" className="text-foreground text-2xl">
+            <GoHeartFill />
+          </a>
+          <a href="#" className="text-foreground text-2xl">
+            <HiShoppingBag />
+          </a>
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className="flex  lg:hidden text-foreground text-2xl"
+          >
+            <GiHamburgerMenu className="size-5 text-foreground" />
+          </Button>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;
