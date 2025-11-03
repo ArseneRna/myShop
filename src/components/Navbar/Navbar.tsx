@@ -6,8 +6,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
-    <header className="bg-white">
-      <nav className="flex mx-auto h-[12vh] items-center px-3 lg:px-10 justify-between max-w-[1400px]">
+    <>
+    <header className="fixed top-0 right-0 left-0 bg-white" >
+      <nav className="top-0 flex w-full mx-auto h-12 md:h-14 items-center px-3 lg:px-10 justify-between max-w-[1400px]">
         {/* logo */}
         <a href="/" className="text-3xl font-bold">
           Mys<span className="text-primary uppercase">h</span>op
@@ -77,6 +78,8 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
+    <hr className="h-12 md:h-14"/>
+    </>
   );
 };
 
