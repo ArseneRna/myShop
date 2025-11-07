@@ -1,10 +1,11 @@
 import { Search } from "lucide-react";
 import { GoHeartFill } from "react-icons/go";
 import { HiShoppingBag } from "react-icons/hi";
-import { Button } from "../ui/button";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { SidebarTrigger, useSidebar } from "../ui/sidebar";
 
 const Navbar = () => {
+    const { isMobile } = useSidebar()
+  
   return (
     <>
     <header className="fixed top-0 right-0 left-0 bg-white" >
@@ -14,7 +15,7 @@ const Navbar = () => {
           Mys<span className="text-primary uppercase">h</span>op
         </a>
         {/* Menu principale */}
-        <ul className="hidden lg:flex items-center gap-x-15 ">
+         { !isMobile && <ul className="flex items-center gap-x-15 ">
           <li>
             <a
               href="#"
@@ -47,7 +48,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-        </ul>
+        </ul>}
         {/* menu de reaction  */}
         <div className="flex gap-6 items-center">
           <div className="hidden lg:flex items-center gap-2 relative">
@@ -68,13 +69,7 @@ const Navbar = () => {
           <a href="#" className="text-foreground text-2xl">
             <HiShoppingBag />
           </a>
-          <Button
-            variant={"ghost"}
-            size={"icon"}
-            className="flex  lg:hidden text-foreground text-2xl"
-          >
-            <GiHamburgerMenu className="size-5 text-foreground" />
-          </Button>
+           { isMobile && <SidebarTrigger className="flex  text-foreground text-2xl cursor-pointer hover:bg-transparent" />}
         </div>
       </nav>
     </header>
