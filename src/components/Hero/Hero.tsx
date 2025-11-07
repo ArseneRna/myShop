@@ -2,7 +2,7 @@ import heroImg from "@/assets/images/hero.png";
 import { Button } from "../ui/button";
 const Hero = () => {
   return (
-    <section className="mt-6">
+    <section className="mt-10">
       <div className="max-w-[1400px] mx-auto px-3 lg:px-10 grid grid-cols-1 lg:grid-cols-2">
         {/* contenu du hero */}
         <div className="mt-4 md:mt-8">

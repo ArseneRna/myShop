@@ -19,54 +19,23 @@ const data = {
       title: "MENU",
       url: "#",
       items: [
+ 
         {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
-          url: "#",
+          title: "Accueil",
+          url: "/",
           isActive: true,
         },
         {
-          title: "Rendering",
-          url: "#",
+          title: "Boutique",
+          url: "/boutique",
         },
         {
-          title: "Caching",
-          url: "#",
+          title: "A propos",
+          url: "/a-propos",
         },
         {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
+          title: "Contact",
+          url: "/contact",
         },
       ],
     },
@@ -84,11 +53,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
             <SidebarGroupContent>
-              <SidebarMenu>
+              <SidebarMenu className="gap-6 items-center justify-center">
                 {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
+                  <SidebarMenuItem className="w-full" key={item.title}>
+                    <SidebarMenuButton className="w-full flex items-center justify-center h-12 rounded-2xl font-semibold  data-[active=true]:font-bold data-[active=true]:text-primary" asChild isActive={item.isActive}>
+                      <a href={item.url}>{item.title} </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
